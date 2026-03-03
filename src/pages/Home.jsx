@@ -1,106 +1,185 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import RealestateImg from "../assets/bgrealestate.avif";
+import GoatFarmingImg from "../assets/goat2.webp";
+import CoffeeGrowingImg from "../assets/coffee3.jpg";
+import LoanImg from "../assets/loan.jpg";
+import WealthImg from "../assets/wealth.jpg";
+import { motion } from "framer-motion";
 
 const Home = () => {
   const services = [
     {
       title: "Real Estate & Property Management",
-      description: "We sell land, plots, and provide professional property management for individuals and institutions.",
-      img: "https://source.unsplash.com/800x480/?land,property",
-      link: "/realestate"
-    },
-    {
-      title: "Finance & Loans",
-      description: "Flexible loans, wealth management, and insurance solutions for individuals, groups, and small institutions.",
-      img: "https://source.unsplash.com/800x480/?finance,loan",
-      link: "/finance"
+      description:
+        "Buy, sell, and manage land and properties with professional support and verified documentation.",
+      img: RealestateImg,
+      link: "/realestate",
     },
     {
       title: "Agriculture Ventures",
-      description: "Goat farming, coffee growing, and other agricultural projects to support local communities.",
-      img: "https://source.unsplash.com/800x480/?agriculture,farm",
-      link: "/agriculture"
-    }
-  ]
+      description:
+        "Goat farming, coffee cultivation, and innovative agricultural projects empowering local communities.",
+      img: GoatFarmingImg,
+      link: "/agriculture",
+    },
+    {
+      title: "Finance & Investment",
+      description:
+        "Flexible loans, wealth management, and investment solutions tailored for individuals and groups.",
+      img: LoanImg,
+      link: "/finance",
+    },
+  ];
 
   return (
     <div className="bg-gray-50">
+
       {/* Hero Section */}
-      <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-6 py-20 text-center">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6 tracking-tight">
-            Rwempango: Excellence in Real Estate, Finance & Agriculture
+      <section
+        className="relative h-screen bg-cover bg-center flex items-center justify-center"
+        style={{ backgroundImage: `url(${RealestateImg})` }}
+      >
+        <div className="absolute inset-0 bg-black/60"></div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="relative z-10 text-center px-6 max-w-3xl"
+        >
+          <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-6 tracking-tight drop-shadow-lg">
+            Rwempango: Excellence in Real Estate, Agriculture & Finance
           </h1>
-          <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto mb-8">
-            We provide innovative solutions in property management, financial services, and agricultural ventures, helping individuals, groups, and institutions achieve their goals.
+          <p className="text-gray-200 text-lg md:text-xl mb-8 drop-shadow-md">
+            We provide innovative solutions in property management, financial services,
+            and agricultural ventures to help you achieve your goals.
           </p>
           <Link
             to="/contact"
-            className="bg-gray-900 text-white px-8 py-4 rounded-xl hover:bg-gray-700 transition-colors font-semibold text-lg shadow-md hover:shadow-lg"
+            className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg transition-all"
           >
             Get Started
           </Link>
-        </div>
+        </motion.div>
       </section>
 
       {/* Services Section */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
+      <section className="max-w-7xl mx-auto px-6 py-24">
         <h2 className="text-4xl font-bold text-gray-900 text-center mb-12 tracking-tight">
           Our Services
         </h2>
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="grid md:grid-cols-3 gap-12">
           {services.map((service, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-white rounded-3xl shadow-lg overflow-hidden transform hover:-translate-y-3 hover:shadow-2xl transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+              className="bg-white rounded-3xl shadow-lg overflow-hidden cursor-pointer hover:shadow-2xl transition-shadow duration-300"
             >
-              <img
-                src={service.img}
-                alt={service.title}
-                className="w-full h-56 object-cover"
-              />
+              <div className="w-full h-64 overflow-hidden">
+                <img
+                  src={service.img}
+                  alt={service.title}
+                  className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-110"
+                />
+              </div>
               <div className="p-8">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-3">{service.title}</h3>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+                  {service.title}
+                </h3>
                 <p className="text-gray-700 mb-4">{service.description}</p>
                 <Link
                   to={service.link}
-                  className="text-gray-900 font-semibold hover:underline"
+                  className="text-green-600 font-semibold hover:underline"
                 >
                   Learn More →
                 </Link>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
 
-      {/* About / Mission Section */}
-      <section className="bg-gray-100 py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6 tracking-tight">Our Mission</h2>
-          <p className="text-gray-600 text-lg">
-            At Rwempango, we aim to provide sustainable and professional services that empower our clients and communities. Whether it’s acquiring property, managing investments, or engaging in agriculture, we ensure excellence every step of the way.
-          </p>
-        </div>
+      {/* Highlight Agriculture */}
+      <section className="relative py-24 bg-green-50">
+        <motion.div
+          className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center px-6"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        >
+          <img
+            src={CoffeeGrowingImg}
+            alt="Coffee Farming"
+            className="w-full h-96 object-cover rounded-3xl shadow-lg"
+          />
+          <div>
+            <h2 className="text-4xl font-bold mb-6 text-gray-900">
+              Agriculture Ventures
+            </h2>
+            <p className="text-gray-700 mb-6">
+              Empowering communities through sustainable goat farming, coffee growing,
+              and modern agricultural practices to boost productivity and livelihoods.
+            </p>
+            <Link
+              to="/agriculture"
+              className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-semibold shadow-lg transition-all"
+            >
+              Explore Agriculture
+            </Link>
+          </div>
+        </motion.div>
       </section>
 
-      {/* Call to Action Section */}
-      <section className="py-20 px-6 text-center">
-        <h2 className="text-4xl font-bold text-gray-900 mb-4 tracking-tight">
-          Ready to Work With Us?
-        </h2>
-        <p className="text-gray-600 mb-8 max-w-2xl mx-auto text-lg">
+      {/* Highlight Finance */}
+      <section className="relative py-24 bg-gray-50">
+        <motion.div
+          className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center px-6 md:flex-row-reverse"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        >
+          <img
+            src={WealthImg}
+            alt="Finance Services"
+            className="w-full h-96 object-cover rounded-3xl shadow-lg"
+          />
+          <div>
+            <h2 className="text-4xl font-bold mb-6 text-gray-900">
+              Finance & Investment
+            </h2>
+            <p className="text-gray-700 mb-6">
+              Tailored financial services including loans, wealth management,
+              and investment planning for individuals, groups, and institutions.
+            </p>
+            <Link
+              to="/finance"
+              className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-semibold shadow-lg transition-all"
+            >
+              Explore Finance
+            </Link>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-gray-900 text-white py-20 px-6 text-center">
+        <h2 className="text-4xl font-bold mb-4">Ready to Work With Us?</h2>
+        <p className="text-gray-300 mb-8 max-w-2xl mx-auto text-lg">
           Contact Rwempango today to explore our services in real estate, finance, or agriculture. Let’s build a better future together.
         </p>
         <Link
           to="/contact"
-          className="bg-gray-900 text-white px-8 py-4 rounded-xl hover:bg-gray-700 transition-colors font-semibold text-lg shadow-md hover:shadow-lg"
+          className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl transition font-semibold text-lg shadow-lg"
         >
           Contact Us
         </Link>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
