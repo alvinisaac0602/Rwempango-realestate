@@ -6,7 +6,7 @@ import GoatFarmingImg from "../assets/goat2.webp";
 import CoffeeGrowingImg from "../assets/coffee3.jpg";
 import LoanImg from "../assets/loan.jpg";
 import WealthImg from "../assets/wealth.jpg";
-import { motion } from "framer-motion";
+
 
 const Home = () => {
   const services = [

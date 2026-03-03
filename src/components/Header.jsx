@@ -9,7 +9,9 @@ const Header = () => {
     <header className="bg-gray-50 shadow-md px-6 py-4 flex items-center justify-between relative">
       {/* Left: Logo / Site Name */}
       <div className="flex items-center space-x-3">
-        <span className="text-2xl font-bold text-gray-900">Rwempango</span>
+        <Link to="/" className="text-2xl font-bold text-gray-900 hover:text-gray-700 transition-colors">
+          Rwempango
+        </Link>
       </div>
 
       {/* Desktop Navigation */}
