@@ -1,5 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Insurance from '../assets/insurance1.jpg';
+import Investment from '../assets/investment.jpg';
+import Loan from '../assets/loan.jpg';
+import Wealth from '../assets/wealth.jpg';
 
 const Finance = () => {
   const services = [
@@ -7,25 +11,25 @@ const Finance = () => {
       title: "Loans & Credit",
       description:
         "Flexible loans for individuals, groups, and small institutions to achieve personal and business goals.",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6pIFtYIpOUt7-qieYkj-2JNb2vlIOd0bYLw&s",
+      img: Loan,
     },
     {
       title: "Wealth Management & Portfolio Advisory",
       description:
         "Personalized strategies to grow your wealth and manage investment portfolios efficiently.",
-      img: "https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=800&q=80",
+      img: Wealth,
     },
     {
       title: "Property & Casualty Insurance",
       description:
         "Protect your property and assets with tailored insurance solutions that fit your needs.",
-      img: "https://images.unsplash.com/photo-1567427018141-0584cfcbf1ed?auto=format&fit=crop&w=800&q=80",
+      img: Insurance,
     },
     {
       title: "Investment Planning & Advisory",
       description:
         "Comprehensive investment planning to help you grow capital, diversify your portfolio, and achieve financial goals.",
-      img: "https://images.unsplash.com/photo-1581091215360-150fc994a427?auto=format&fit=crop&w=800&q=80",
+      img: Investment,
     },
   ];
 
