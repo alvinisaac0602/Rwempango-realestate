@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import RealestateImg from '../assets/bgrealestate.avif';
+import Landsurvey from '../assets/landsurvey.webp';
+import Title from '../assets/title.jpg';
 
 const Realestate = () => {
   const services = [
@@ -13,13 +16,13 @@ const Realestate = () => {
       title: "Land Title Processing",
       description:
         "Professional support in land title transfers, verification, and documentation to secure your ownership legally.",
-      img: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80",
+      img: Title,
     },
     {
       title: "Land Survey Services",
       description:
         "Accurate land surveying including boundary opening, subdivision, and mapping by qualified professionals.",
-      img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80",
+      img: Landsurvey,
     },
     {
       title: "Property Management",
@@ -37,7 +40,7 @@ const Realestate = () => {
         className="relative h-[70vh] bg-cover bg-center"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80')",
+            `url(${RealestateImg})`,
         }}
       >
         <div className="absolute inset-0 bg-black/60"></div>
