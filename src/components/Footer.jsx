@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="space-y-4">
           <h2 className="text-2xl font-bold text-white">Rwempango</h2>
           <p className="text-gray-400">
-            Providing loans, wealth management, insurance, and financial solutions for individuals, groups, and small institutions.
+            Providing Real estate, Agriculture, loans, wealth management, insurance, and financial solutions for individuals, groups, and small institutions.
           </p>
         </div>
 
@@ -18,7 +18,7 @@ const Footer = () => {
           <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
           <ul className="space-y-2">
             <li><a href="/" className="hover:text-white transition-colors">Home</a></li>
-            <li><a href="/realestate" className="hover:text-white transition-colors">Realestate</a></li>
+            <li><a href="/realestate" className="hover:text-white transition-colors">Real estate</a></li>
             <li><a href="/agriculture" className="hover:text-white transition-colors">Agriculture</a></li>
             <li><a href="/finance" className="hover:text-white transition-colors">Finance</a></li>
             <li><a href="/contact" className="hover:text-white transition-colors">Contact Us</a></li>
@@ -28,9 +28,9 @@ const Footer = () => {
         {/* Contact Info */}
         <div>
           <h3 className="text-lg font-semibold text-white mb-4">Contact</h3>
-          <p>Email: info@rwempango.com</p>
-          <p>Phone: +256 700 000 000</p>
-          <p>Address: Kampala, Uganda</p>
+          <p>Email: Musinguzijohn2023@gmail.com</p>
+          <p>Phone: +256 759 542947 / +256 780 631 385</p>
+          <p>Address: Mukono, Uganda</p>
         </div>
 
         {/* Newsletter Subscription */}
